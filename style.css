@@ -1,0 +1,137 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.fora {
+    position: relative;
+}
+
+.leap-color {
+    background: rgba(242, 155, 41, 0.8);
+}
+
+.mission-color {
+    background: rgba(104, 5, 242, 0.8);
+}
+
+.hackthon-color {
+    background: rgba(17, 45, 242, 0.8);
+}
+
+.overlay {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.card {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px !important;
+    position: relative;
+    z-index: 9;
+}
+
+.card.premium {
+    background: linear-gradient(115.58deg, #AE8625 0%, #D8B75E 31.42%, #D2AC47 64.6%, #EDC967 92.78%);
+    color: white;
+}
+
+.fora:hover .overlay {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+
+/* --------- */
+
+.info {
+    font-size: 16;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.link:hover {
+    text-decoration-line: underline;
+    color: #0675CE;
+    cursor: pointer;
+}
+
+
+/* .card-original {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px !important;
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+
+.dvInsideTL {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(104, 5, 242, 0.8);
+    border-radius: 10px;
+} */
+
+.dvInsideTL:hover {
+    /* position: relative; */
+    /* opacity: 0; */
+    /* visibility: collapse; */
+    display: none;
+    /* cursor: pointer; */
+    transition: 0.4s;
+    z-index: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.card-block {
+    padding-left: 16px;
+    padding-top: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.premium-text.card-text {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-detail {
+    float: right;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+.img-fluid {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.benefits-text {
+    bottom: 0;
+    position: absolute;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
