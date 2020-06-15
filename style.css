@@ -125,7 +125,7 @@
     padding-top: 20px;
 }
 
-.img-fluid {
+.img-fluid.radius {
     border-radius: 10px 0px 0px 10px;
 }
 

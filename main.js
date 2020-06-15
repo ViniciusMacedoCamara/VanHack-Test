@@ -1,3 +1,7 @@
+function myFunction() {
+
+}
+
 var cardBlock = document.createElement('div');
 
 type = Math.floor(Math.random() * 5); // (0/Premium, 1/Leap, 2/Mission, 3/VanHackthon)
