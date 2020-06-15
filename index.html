@@ -30,7 +30,9 @@
             </div>
 
             <div class="row">
-                <div class="benefits-text">More benefits with: Premium</div>
+                <div class="benefits"><span class="benefits-text">More benefits with</span> <button class="premium-button"></button></div>
+                <!-- https://iili.io/JrG3e2.png Premium -->
+                <!-- https://iili.io/JrGqX9.png Premium hover -->
 
             </div>
         </div>
@@ -45,17 +47,19 @@
 
     <div class="row">
         <div class="col-md-2">
-            <div class="row"><span class="link">All</span></div>
-            <div class="row"><span class="link">MeetUp</span></div>
-            <div class="row"><span class="link">Leap</span></div>
-            <div class="row"><span class="link">Recruiting Mission</span></div>
-            <div class="row"><span class="link">VanHackthon</span></div>
-            <div class="row"><span class="link">Premium Webinar</span></div>
-            <div class="row"><span class="link">Open Webinar</span></div>
+            <!-- //0 = All | 1 = MeetUp & Open | 2 = Leap | 3 = Mission | 4 = VanHackthon | 5 = Premium -->
+            <div class="row"><span class="link" onclick="myFunction1(0)">All</span></div>
+            <div class="row"><span class="link" onclick="myFunction1(1)">MeetUp & Open Webinar</span></div>
+            <div class="row"><span class="link" onclick="myFunction1(2)">Leap</span></div>
+            <div class="row"><span class="link" onclick="myFunction1(3)">Recruiting Mission</span></div>
+            <div class="row"><span class="link" onclick="myFunction1(4)">VanHackthon</span></div>
+            <div class="row"><span class="link" onclick="myFunction1(5)">Premium Webinar</span></div>
         </div>
         <div class="col-md-9 offset-md-1">
-            <div class="row">
-                <div class="col-md-6">
+
+            <div class="row" id="loop">
+
+                <!-- <div class="col-md-6">
                     <div class="fora">
                         <div class="overlay center mission-color">
                             <h5>Recruiting<br> Mission</h5>
@@ -73,13 +77,13 @@
                                         <span class="card-text">Deadline: 06/17/2020</span><br>
                                         <div class="btn-detail">
                                             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" id="number">See Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div> -->
 
                 <!-- <div class="col-md-6">
                     <div class="fora">
@@ -230,6 +234,7 @@
           </button>
                 </div>
                 <div class="modal-body">
+                    <!-- <a href="https://imgbb.com/"><img src="https://i.ibb.co/V3NhyrS/burnaby.jpg" alt="burnaby" border="0"></a> -->
                     <img src="https://via.placeholder.com/1920x1000" class="img-fluid">
                     <div class="row">
                         <div class="col-md-6">
