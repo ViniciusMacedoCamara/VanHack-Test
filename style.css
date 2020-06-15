@@ -135,3 +135,15 @@
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
 }
+
+.parent {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+}
+
+.post div {
+    color: white;
+    font-size: 2.5em;
+    padding: 20px;
+}
