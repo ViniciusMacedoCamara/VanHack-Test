@@ -7,17 +7,15 @@
     </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Css and Bootstrap links -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
 </head>
 
 <body class="container">
 
+    <!-- Welcome code -->
     <div class="row mt-4">
         <div class="col-md-6"><img class="img-responsive mx-auto d-block" style="height: 300px;" src="https://i.ibb.co/dbs1wDZ/example-7.png"></div>
         <div class="col-md-6">
@@ -30,10 +28,9 @@
             </div>
 
             <div class="row">
-                <div class="benefits"><span class="benefits-text">More benefits with</span> <button class="premium-button"></button></div>
-                <!-- https://iili.io/JrG3e2.png Premium -->
-                <!-- https://iili.io/JrGqX9.png Premium hover -->
-
+                <div class="benefits"><span class="benefits-text">More benefits with</span>
+                    <button class="premium-button" data-toggle="modal" data-target="#modalPremium" onclick="bePremium()"></button>
+                </div>
             </div>
         </div>
     </div>
@@ -43,232 +40,62 @@
     <div class="row mt-3">
         <h3>Upcoming events</h3>
     </div>
-    <!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hello World from my localhost website" data-hashtags="VanHack #HackerRank" data-related="" data-show-count="false">Tweet</a> -->
 
     <div class="row">
+        <!-- Filter/Nav through the types code -->
         <div class="col-md-2">
             <!-- //0 = All | 1 = MeetUp & Open | 2 = Leap | 3 = Mission | 4 = VanHackthon | 5 = Premium -->
-            <div class="row"><span class="link" onclick="myFunction1(0)">All</span></div>
-            <div class="row"><span class="link" onclick="myFunction1(1)">MeetUp & Open Webinar</span></div>
-            <div class="row"><span class="link" onclick="myFunction1(2)">Leap</span></div>
-            <div class="row"><span class="link" onclick="myFunction1(3)">Recruiting Mission</span></div>
-            <div class="row"><span class="link" onclick="myFunction1(4)">VanHackthon</span></div>
-            <div class="row"><span class="link" onclick="myFunction1(5)">Premium Webinar</span></div>
+            <div class="row"><span class="link" onclick="generateEvents(0)">All</span></div>
+            <div class="row"><span class="link" onclick="generateEvents(1)">MeetUp & Open Webinar</span></div>
+            <div class="row"><span class="link" onclick="generateEvents(2)">Leap</span></div>
+            <div class="row"><span class="link" onclick="generateEvents(3)">Recruiting Mission</span></div>
+            <div class="row"><span class="link" onclick="generateEvents(4)">VanHackthon</span></div>
+            <div class="row"><span class="link" onclick="generateEvents(5)">Premium Webinar</span></div>
         </div>
+
+        <!-- The event card is generated here -->
         <div class="col-md-9 offset-md-1">
-
             <div class="row" id="loop">
-
-                <!-- <div class="col-md-6">
-                    <div class="fora">
-                        <div class="overlay center mission-color">
-                            <h5>Recruiting<br> Mission</h5>
-                        </div>
-                        <div class="card">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <img src="https://via.placeholder.com/99x200" class="img-fluid radius">
-                                </div>
-                                <div class="col">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Event Name</h4>
-                                        <span class="card-text">Date: June 17th, 8 AM</span><br>
-                                        <span class="card-text">Local: Vancouver, CA</span><br>
-                                        <span class="card-text">Deadline: 06/17/2020</span><br>
-                                        <div class="btn-detail">
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal" id="number">See Details</button>
-                </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div> -->
 
-                <!-- <div class="col-md-6">
-                    <div class="fora">
-                        <div class="overlay center hackthon-color">
-                            <h5>VanHackthon</h5>
-                        </div>
-                        <div class="card">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <img src="https://via.placeholder.com/99x200" class="img-fluid">
-                                </div>
-                                <div class="col">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Event Name</h4>
-                                        <span class="card-text">Date: June 17th, 8 AM</span><br>
-                                        <span class="card-text">Local: Vancouver, CA</span><br>
-                                        <span class="card-text">Deadline: 06/17/2020</span><br>
-                                        <div class="btn-detail">
-                                            <button class="btn btn-outline-primary">See Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-            <div class="mt-4"></div>
-
-            <!-- <div class="row">
-                <div class="col-md-6">
-                    <div class="fora">
-                        <div class="overlay center leap-color">
-                            <h5>Leap</h5>
-                        </div>
-                        <div class="card">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <img src="https://via.placeholder.com/99x200" class="img-fluid">
-                                </div>
-                                <div class="col">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Event Name</h4>
-                                        <span class="card-text">Date: June 17th, 8 AM</span><br>
-                                        <span class="card-text">Local: Vancouver, CA</span><br>
-                                        <span class="card-text">Deadline: 06/17/2020</span><br>
-                                        <div class="btn-detail">
-                                            <button class="btn btn-outline-primary">See Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="fora">
-                        <div class="card">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <img src="https://via.placeholder.com/99x200" class="img-fluid">
-                                </div>
-                                <div class="col">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Event Name</h4>
-                                        <span class="card-text">Date: June 17th, 8 AM</span><br>
-                                        <span class="card-text">Local: Vancouver, CA</span><br>
-                                        <span class="card-text">Deadline: 06/17/2020</span><br>
-                                        <div class="btn-detail">
-                                            <button class="btn btn-outline-primary">See Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-4"></div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="fora">
-                        <div class="card">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <img src="https://via.placeholder.com/99x200" class="img-fluid">
-                                </div>
-                                <div class="col">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Event Name</h4>
-                                        <span class="card-text">Date: June 17th, 8 AM</span><br>
-                                        <span class="card-text">Local: Vancouver, CA</span><br>
-                                        <span class="card-text">Deadline: 06/17/2020</span><br>
-                                        <div class="btn-detail">
-                                            <button class="btn btn-outline-primary">See Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="fora">
-                        <div class="card premium">
-                            <div class="row no-gutters">
-                                <div class="col-auto">
-                                    <img src="https://via.placeholder.com/99x200" class="img-fluid">
-                                </div>
-                                <div class="col">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Event Name</h4>
-                                        <span class="card-text premium-text">Date: June 17th, 8 AM</span><br>
-                                        <span class="card-text premium-text">Local: Vancouver, CA</span><br>
-                                        <span class="card-text premium-text">Deadline: 06/17/2020</span><br>
-                                        <div class="btn-detail">
-                                            <button class="btn btn-outline-light">See Details</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Event Title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                </div>
-                <div class="modal-body">
-                    <!-- <a href="https://imgbb.com/"><img src="https://i.ibb.co/V3NhyrS/burnaby.jpg" alt="burnaby" border="0"></a> -->
-                    <img src="https://via.placeholder.com/1920x1000" class="img-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 class="card-title mt-4">Event Name</h4>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mt-3">
-
-                            </div>
-                        </div>
-                    </div>
-                    <span class="card-text">Date: June 17th, 8 AM</span><br>
-                    <span class="card-text">Local: Vancouver, CA</span><br>
-                    <span class="card-text">Deadline: 06/17/2020</span><br>
-                    <hr>
-                    <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at nunc sem. Maecenas ut ligula id ipsum cursus rhoncus et sit amet massa. Pellentesque in nisi fringilla, viverra libero sed, sodales justo. Morbi vel condimentum orci. Aenean vulputate eros
-                sit amet arcu tempor, nec efficitur enim aliquet. Morbi vel condimentum orci. Aenean vulputate eros sit amet arcu tempor, nec efficitur enim aliquet.
-                    </span>
-                    <div class="modal-footer mt-4">
-                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hello World from my localhost website" data-hashtags="VanHack #HackerRank" data-related="" data-show-count="false">Tweet</a>
-                        <button type="button" class="btn btn-primary" onclick="myFunction()">Apply</button>
-                    </div>
+        <!-- "See Details" Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" id="showModal">
+                    <!-- Modal Content -->
                 </div>
             </div>
         </div>
 
+        <!-- "Be Premium" Modal -->
+        <div class="modal fade" id="modalPremium" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" id="premiumModal">
+                    <!-- Modal Content -->
+                </div>
+            </div>
+        </div>
 
-        <span id="number"></span>
+        <!-- Response Apply Modal -->
+        <div class="modal fade" id="modalApply" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" id="applyModal">
+                    <!-- Modal Content -->
+                </div>
+            </div>
+        </div>
 
+    </div>
 
-        <script src="main.js"></script>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div class="footer">Made with ❤ by <span class="emphasis">Vinícius Macedo</span></div>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 
 </html>
